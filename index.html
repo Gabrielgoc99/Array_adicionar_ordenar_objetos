@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+
+    <script>
+
+        var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+
+        function adicionarObjeto() {
+            var campoPalavra = document.getElementById('palavra').value
+
+            if(campoPalavra == '') {
+                alert('Informe um valor válido!')
+                console.log(objetos)
+
+            }
+            else if (objetos.indexOf(campoPalavra) === -1 ) {
+                document.getElementById('palavra').value = objetos.push(campoPalavra)
+                document.getElementById('palavra').value = ''
+                console.log(objetos)
+
+            } else {
+                alert('Objeto já foi adicionado!')
+                console.log(objetos)
+                
+            }
+
+        }
+
+        function ordenarObjetos() {
+            console.log(objetos.sort())
+
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="palavra" placeholder="Digite uma palavra" 
+    style="width: 200px; background-color: gainsboro;">
+
+    <button type="submit" onclick="adicionarObjeto()" 
+    style="background-color: blue; color: white;">Adicionar</button>
+
+    <button onclick="ordenarObjetos()" 
+    style="background-color: darkslategrey; color: white;">Ordenar</button>
+    
+</body>
+</html>
